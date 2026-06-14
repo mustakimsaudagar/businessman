@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>For My Dad ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 3em;
+  animation: glow 2s infinite alternate;
+}
+
+p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  line-height: 1.6em;
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  margin: 30px auto;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite;
+  box-shadow: 0 0 30px red;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart:before {
+  top: -50px;
+  left: 0;
+}
+
+.heart:after {
+  left: 50px;
+  top: 0;
+}
+
+@keyframes beat {
+  0% { transform: rotate(-45deg) scale(1); }
+  50% { transform: rotate(-45deg) scale(1.2); }
+  100% { transform: rotate(-45deg) scale(1); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff; }
+  to { text-shadow: 0 0 25px #ff4d4d; }
+}
+
+.floating {
+  position: absolute;
+  bottom: -50px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>💖 I Love You Dad 💖</h1>
+
+  <div class="heart"></div>
+
+  <p>
+    Dad, you are my hero, my strength, and my biggest inspiration.<br><br>
+
+    Thank you for every sacrifice you made for me,<br>
+    for every silent struggle you faced just to see me smile.<br><br>
+
+    I may not always say it, but I truly love you from the deepest corner of my heart.<br>
+    You are my guide, my support, and my forever role model.<br><br>
+
+    💖 No matter how big I grow, I will always be your child 💖<br><br>
+
+    With all my love,<br>
+    <b>Mustakim</b>
+  </p>
+</div>
+
+<script>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "floating";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.fontSize = (20 + Math.random() * 30) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
